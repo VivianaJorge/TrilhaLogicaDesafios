@@ -17,16 +17,16 @@ public class MercadoCompraComDesconto {
             double valor = 4.99;
             if (qtd>=1 && qtd<=10){
                 double total = (double) (qtd*valor);
-                System.out.println("Valor a pagar: R$" + total);
+                System.out.printf("Valor a pagar: R$ %.2f", total);
             } else if (qtd > 10 && qtd <= 20){
                 double total = (double) ((qtd*valor) - (qtd*valor*0.1));
-                System.out.println("Valor a pagar com 10% de desconto: R$" + total);
+                System.out.printf("Valor a pagar com 10 por cento de desconto: R$ %.2f", total);
             } else if (qtd > 20 && qtd <= 50){
                 double total = (double) ((qtd*valor) - (qtd*valor*0.2));
-                System.out.println("Valor a pagar com 20% de desconto: R$" + total);
+                System.out.printf("Valor a pagar com 20 por cento de desconto: R$ %.2f", total);
             } else if (qtd>50){
                 double total = (double) ((qtd*valor) - (qtd*valor*0.25));
-                System.out.println("Valor a pagar com 25% de desconto: R$" + total);
+                System.out.printf("Valor a pagar com 25 por cento de desconto: R$ %.2f", total);
             } else {
                 System.out.println("Quantidade inválida.");
             }
@@ -36,16 +36,16 @@ public class MercadoCompraComDesconto {
             double valor = 7.99;
             if (qtd>=1 && qtd<=10){
                 double total = (double) (qtd*valor);
-                System.out.println("Valor a pagar: R$" + total);
+                System.out.printf("Valor a pagar: R$  %.2f", total);
             } else if (qtd > 10 && qtd <= 20){
                 double total = (double) ((qtd*valor) - (qtd*valor*0.1));
-                System.out.println("Valor a pagar com 10% de desconto: R$" + total);
+                System.out.printf("Valor a pagar com 10 por cento de desconto: R$ %.2f", total);
             } else if (qtd > 20 && qtd <= 50){
                 double total = (double) ((qtd*valor) - (qtd*valor*0.2));
-                System.out.println("Valor a pagar com 20% de desconto: R$" + total);
+                System.out.printf("Valor a pagar com 20 por cento de desconto: R$ %.2f", total);
             } else if (qtd>50){
                 double total = (double) ((qtd*valor) - (qtd*valor*0.25));
-                System.out.println("Valor a pagar com 25% de desconto: R$" + total);
+                System.out.printf("Valor a pagar com 25 por cento de desconto: R$ %.2f", total);
             } else {
                 System.out.println("Quantidade inválida.");
             }
@@ -55,16 +55,16 @@ public class MercadoCompraComDesconto {
             double valor = 3.89;
             if (qtd>=1 && qtd<=10){
                 double total = (double) (qtd*valor);
-                System.out.println("Valor a pagar: R$" + total);
+                System.out.printf("Valor a pagar: R$ %.2f", total);
             } else if (qtd > 10 && qtd <= 20){
                 double total = (double) ((qtd*valor) - (qtd*valor*0.1));
-                System.out.println("Valor a pagar com 10% de desconto: R$" + total);
+                System.out.printf("Valor a pagar com 10 por cento de desconto: R$ %.2f", total);
             } else if (qtd > 20 && qtd <= 50){
                 double total = (double) ((qtd*valor) - (qtd*valor*0.2));
-                System.out.println("Valor a pagar com 20% de desconto: R$" + total);
+                System.out.printf("Valor a pagar com 20 por cento de desconto: R$ %.2f", total);
             } else if (qtd>50){
                 double total = (double) ((qtd*valor) - (qtd*valor*0.25));
-                System.out.println("Valor a pagar com 25% de desconto: R$" + total);
+                System.out.printf("Valor a pagar com 25 por cento de desconto: R$ %.2f", total);
             } else {
                 System.out.println("Quantidade inválida.");
             }
@@ -74,16 +74,16 @@ public class MercadoCompraComDesconto {
             double valor = 0.99;
             if (qtd>=1 && qtd<=10){
                 double total = (double) (qtd*valor);
-                System.out.println("Valor a pagar: R$" + total);
+                System.out.format("Valor a pagar: R$ %.2f", total);
             } else if (qtd > 10 && qtd <= 20){
                 double total = (double) ((qtd*valor) - (qtd*valor*0.1));
-                System.out.println("Valor a pagar com 10% de desconto: R$" + total);
+                System.out.printf("Valor a pagar com 10 por cento de desconto: R$ %.2f", total);
             } else if (qtd > 20 && qtd <= 50){
                 double total = (double) ((qtd*valor) - (qtd*valor*0.2));
-                System.out.println("Valor a pagar com 20% de desconto: R$" + total);
+                System.out.printf("Valor a pagar com 20 por cento de desconto: R$ %.2f", total);
             } else if (qtd>50){
                 double total = (double) ((qtd*valor) - (qtd*valor*0.25));
-                System.out.println("Valor a pagar com 25% de desconto: R$" + total);
+                System.out.printf("Valor a pagar com 25 por cento de desconto: R$ %.2f", total);
             } else {
                 System.out.println("Quantidade inválida.");
             }

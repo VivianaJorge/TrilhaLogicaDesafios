@@ -23,8 +23,7 @@ public class BuscaNome {
 
         Scanner t = new Scanner(System.in);
         System.out.println("Informe o nome que deseja pesquisar: ");
-        String pesquisa = t.next().toUpperCase();
-        if(nomes.contains(pesquisa)){
+        if(nomes.contains(t.next().toUpperCase())){
             System.out.println("Achei");
         } else {
             System.out.println("Não achei");

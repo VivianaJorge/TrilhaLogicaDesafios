@@ -1,5 +1,6 @@
 package excluirnome;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class ExcluirNome {
@@ -24,30 +25,34 @@ public class ExcluirNome {
         nomes.add("TEO");//
         nomes.add("ISIS");//
         nomes.add("YURI");//
-        nomes.add("CLAIR");
+        nomes.add("CARLOS");
         nomes.add("ELOISA");
         nomes.add("CAIO");//
 
+        System.out.println("Lista de nomes completa:");
         System.out.println(nomes);
 
         ArrayList<String> novaLista = new ArrayList<>();
-
-        for(int j=0;j< nomes.size();j++) {
-            for (int i = j+1; i < nomes.size(); i++) {
-                if ((nomes.get(j).equals(nomes.get(i)))) {
-                    System.out.println(nomes.get(j) + "igual" + nomes.get(i));
-                   // nomes.remove(nomes.get(i));
-                    novaLista.add(nomes.get(i));
-
-                } else {
-                    System.out.println(nomes.get(j) + "diferente" + nomes.get(i));
-
-
+        boolean repete = true;
+        do{
+            for(int j=0;j< nomes.size();j++) {
+                for (int i = j+1; i < nomes.size(); i++) {
+                    if ((nomes.get(j).equals(nomes.get(i)))) {
+                        novaLista.add(nomes.get(i));
+                        repete = true;
+                    } else {
+                        repete = false;
+                    }
                 }
             }
-        }
+        } while (repete);
+
+        nomes.removeAll(novaLista);
+        novaLista.clear();
+        System.out.println("-----------------");
+        System.out.println("Lista de nomes retirando duplicidade:");
         System.out.println(nomes);
-        }
+    }
 
 }
 

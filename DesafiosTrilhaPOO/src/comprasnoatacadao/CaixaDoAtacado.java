@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CaixaDoAtacado {
 
@@ -25,7 +26,40 @@ public class CaixaDoAtacado {
           System.out.println(catalogo.getCod() + "|" + catalogo.getNome() + "|" + catalogo.getValor());
        }
 
-       String arquivo = "C:\\Desenvolvimento\\Projeto_Sementes\\DesafiosTrilhaPOO\\src\\comprasnoatacadao\\Compra.csv";
+       Scanner t = new Scanner(System.in);
+       String resposta;
+       double valorCompra = 0.00;
+       double valorComDesc = 0.00;
+       double valorTotal = 0.00;
+       do{
+          System.out.println("Informe código do produto desejado");
+          int codigo = t.nextInt();
+          System.out.println("Informe a quantidade desejada do produto");
+          int quantidade = t.nextInt();
+
+          for (Produto catalogo : produtos) {
+             if(catalogo.getCod()==codigo){
+               valorCompra = catalogo.getValor()*quantidade;
+               valorComDesc = catalogo.descontoPorQuantidade(quantidade,valorCompra);
+                System.out.println(catalogo.descontoPorQuantidade(quantidade,valorCompra));
+             }
+          }
+          valorTotal += valorComDesc;
+          System.out.println("Deseja mais produtos? [S/N]");
+          resposta = t.next();
+       } while (resposta.equals("S"));
+       System.out.println("Total das compras com desconto por quantidade: R$ " + valorTotal);
+
+       System.out.println("Informe o código correspondente à forma de Pagamento:");
+       System.out.println("1 - Débito");
+       System.out.println("2 - Dinheiro");
+       System.out.println("3 - Crédito");
+       int pagamento = t.nextInt();
+       FormaPagamento descPagamento = new FormaPagamento();
+       double totalFinal = descPagamento.FormaPagamento(pagamento,valorTotal);
+       System.out.println("Valor Final: R$ " + totalFinal);
+
+/*       String arquivo = "C:\\Desenvolvimento\\Projeto_Sementes\\DesafiosTrilhaPOO\\src\\comprasnoatacadao\\Compra.csv";
        String linha = "";
        String csvSeparator = ",";
 
@@ -39,19 +73,15 @@ public class CaixaDoAtacado {
           }
        } catch (IOException e) {
           e.printStackTrace();
- /*     } finally {
+      } finally {
          try {
             if (br != null)
                br.close();
          } catch (IOException e) {
             e.printStackTrace();
          }
- */     }
-
-          //   DICA DO DESAFIO:
-         //   public float computarCompra(){
-        //         return valorTotal;
-       //    }
+     }
+ */
 
        }
     }

@@ -4,7 +4,7 @@ public class Produto {
     private int cod;
     private String nome;
     private double valor;
-    private double valorTotal=0;
+    private double compraComDesc =0;
 
 
     public Produto(int cod, String nome, double valor) {
@@ -39,15 +39,15 @@ public class Produto {
 
     public double descontoPorQuantidade(int quantidade, double valorCompra){
         if (quantidade<5){
-            valorTotal = valorCompra;
+            compraComDesc = valorCompra;
         } else if(quantidade>=5 && quantidade<15){
-            valorTotal = valorCompra - (valorCompra * 0.10);
+            compraComDesc = valorCompra - (valorCompra * 0.10);
         } else if(quantidade>=15 && quantidade<25){
-            valorTotal = valorCompra - (valorCompra * 0.20);
+            compraComDesc = valorCompra - (valorCompra * 0.20);
         } else {
-            valorTotal = valorCompra - (valorCompra * 0.25);
+            compraComDesc = valorCompra - (valorCompra * 0.25);
         }
-        return valorTotal;
+        return compraComDesc;
     }
 }
 

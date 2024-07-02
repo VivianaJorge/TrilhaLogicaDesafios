@@ -1,15 +1,16 @@
 package comprasnoatacadao;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CaixaDoAtacado {
 
     public static void main(String[] args) {
+
+       double valorCompra = 0.00;
+       double valorComDesc = 0.00;
+       double valorTotal = 0.00;
+
        ArrayList<Produto> produtos = new ArrayList<>();
 
        Produto prodA = new Produto(1, "Café 1kg", 53.00);
@@ -26,7 +27,37 @@ public class CaixaDoAtacado {
           System.out.println(catalogo.getCod() + "|" + catalogo.getNome() + "|" + catalogo.getValor());
        }
 
-       Scanner t = new Scanner(System.in);
+       ArrayList<Compra> compra = new ArrayList<>();
+       Compra item1 = new Compra(1,10);
+       Compra item2 = new Compra(2,20);
+       Compra item3 = new Compra(3,5);
+
+
+       compra.add(item1);
+       compra.add(item2);
+       compra.add(item3);
+
+       for (Compra pedido : compra) {
+          System.out.println(pedido.getCodProduto() + "," + pedido.getQuantProduto());
+       }
+
+       for (Produto catalogo : produtos) {
+          for (Compra pedido : compra) {
+             if(catalogo.getCod()==pedido.getCodProduto()){
+               valorCompra = catalogo.getValor()*pedido.getQuantProduto();
+               valorComDesc = catalogo.descontoPorQuantidade(pedido.getQuantProduto(),valorCompra);
+        //       System.out.println(catalogo.descontoPorQuantidade(pedido.getQuantProduto(),valorCompra));
+        //       System.out.println(catalogo.descontoPorQuantidade(pedido.getQuantProduto(),valorComDesc));
+               valorTotal += catalogo.descontoPorQuantidade(pedido.getQuantProduto(),valorComDesc);
+             }
+          }
+       }
+       System.out.println("Total das compras com desconto por quantidade: R$ " + valorTotal);
+
+
+         //INPUT EM TELA
+
+    /*   Scanner t = new Scanner(System.in);
        String resposta;
        double valorCompra = 0.00;
        double valorComDesc = 0.00;
@@ -55,9 +86,12 @@ public class CaixaDoAtacado {
        System.out.println("2 - Dinheiro");
        System.out.println("3 - Crédito");
        int pagamento = t.nextInt();
-       FormaPagamento descPagamento = new FormaPagamento();
+       Compra descPagamento = new Compra();
        double totalFinal = descPagamento.FormaPagamento(pagamento,valorTotal);
        System.out.println("Valor Final: R$ " + totalFinal);
+     */
+
+       //TENTATIVA COM ARQUIVO
 
 /*       String arquivo = "C:\\Desenvolvimento\\Projeto_Sementes\\DesafiosTrilhaPOO\\src\\comprasnoatacadao\\Compra.csv";
        String linha = "";
